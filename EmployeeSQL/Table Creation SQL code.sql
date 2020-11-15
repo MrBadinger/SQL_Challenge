@@ -9,7 +9,10 @@ DROP TABLE "employees" CASCADE;
 DROP TABLE "salaries" CASCADE;
 DROP TABLE "titles" CASCADE;
 
+-- Load data in this order or you get errors
+-- 1) department, 2) titles, 3) employees, 4) dep_emp, 5) dept_manager, 6) salaries
 
+-- Create Table
 CREATE TABLE "departments" (
     "dept_no" varchar(100)   NOT NULL,
     "dept_name" varchar(100)   NOT NULL,
@@ -18,6 +21,7 @@ CREATE TABLE "departments" (
      )
 );
 
+-- Create Table
 CREATE TABLE "dept_emp" (
     "emp_no" int   NOT NULL,
     "dept_no" varchar(100)   NOT NULL,
@@ -26,6 +30,7 @@ CREATE TABLE "dept_emp" (
      )
 );
 
+-- Create Table
 CREATE TABLE "dept_manager" (
     "dept_no" varchar(100)   NOT NULL,
     "emp_no" int   NOT NULL,
@@ -34,6 +39,7 @@ CREATE TABLE "dept_manager" (
      )
 );
 
+-- Create Table
 CREATE TABLE "employees" (
     "emp_no" int   NOT NULL,
     "emp_title" varchar(100)   NOT NULL,
@@ -47,6 +53,7 @@ CREATE TABLE "employees" (
      )
 );
 
+-- Create Table
 CREATE TABLE "salaries" (
     "emp_no" int   NOT NULL,
     "salary" money   NOT NULL,
@@ -55,6 +62,7 @@ CREATE TABLE "salaries" (
      )
 );
 
+-- Create Table
 CREATE TABLE "titles" (
     "title_id" varchar(100)   NOT NULL,
     "title" varchar(50)   NOT NULL,
@@ -63,6 +71,7 @@ CREATE TABLE "titles" (
      )
 );
 
+-- Add foreign key relationships
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
