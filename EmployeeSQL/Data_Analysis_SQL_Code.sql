@@ -16,6 +16,11 @@ AND employees.hire_date <  '1987-01-01 00:00:00'
 
 -- 3) List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
+Select departments.dept_no, departments.dept_name, dept_manager.emp_no, employees.last_name, employees.first_name
+From employees
+Inner Join dept_manager On employees.emp_no=dept_manager.emp_no
+Inner Join departments On departments.dept_no=dept_manager.dept_no
+
 
 -- 4) List the department of each employee with the following information: employee number, last name, first name, and department name.
 
