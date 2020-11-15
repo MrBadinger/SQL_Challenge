@@ -3,8 +3,8 @@
 
 
 CREATE TABLE "Departments" (
-    "dept_no" string   NOT NULL,
-    "dept_name" string   NOT NULL,
+    "dept_no" varchar(100)   NOT NULL,
+    "dept_name" varchar(100)   NOT NULL,
     CONSTRAINT "pk_Departments" PRIMARY KEY (
         "dept_no"
      )
@@ -12,14 +12,14 @@ CREATE TABLE "Departments" (
 
 CREATE TABLE "Dept_Emp" (
     "emp_no" int   NOT NULL,
-    "dept_no" string   NOT NULL,
+    "dept_no" varchar(100)   NOT NULL,
     CONSTRAINT "pk_Dept_Emp" PRIMARY KEY (
         "emp_no"
      )
 );
 
 CREATE TABLE "Dept_Manager" (
-    "dept_no" string   NOT NULL,
+    "dept_no" varchar(100)   NOT NULL,
     "emp_no" int   NOT NULL,
     CONSTRAINT "pk_Dept_Manager" PRIMARY KEY (
         "emp_no"
@@ -28,11 +28,11 @@ CREATE TABLE "Dept_Manager" (
 
 CREATE TABLE "Employees" (
     "emp_no" int   NOT NULL,
-    "emp_title" string   NOT NULL,
+    "emp_title" varchar(100)   NOT NULL,
     "birth_date" date   NOT NULL,
     "first_name" varchar(100)   NOT NULL,
     "last_name" varchar(100)   NOT NULL,
-    "sex" string   NOT NULL,
+    "sex" varchar(100)   NOT NULL,
     "hire_date" date   NOT NULL,
     CONSTRAINT "pk_Employees" PRIMARY KEY (
         "emp_no"
@@ -48,7 +48,7 @@ CREATE TABLE "Salaries" (
 );
 
 CREATE TABLE "Titles" (
-    "title_id" string   NOT NULL,
+    "title_id" varchar(100)   NOT NULL,
     "title" varchar(50)   NOT NULL,
     CONSTRAINT "pk_Titles" PRIMARY KEY (
         "title_id"
