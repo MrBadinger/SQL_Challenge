@@ -24,6 +24,11 @@ Inner Join departments On departments.dept_no=dept_manager.dept_no
 
 -- 4) List the department of each employee with the following information: employee number, last name, first name, and department name.
 
+Select employees.emp_no, employees.last_name, employees.first_name, departments.dept_name
+From employees
+Inner Join dept_emp On employees.emp_no=dept_emp.emp_no
+Inner Join departments On departments.dept_no=dept_emp.dept_no
+
 
 -- 5) List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
